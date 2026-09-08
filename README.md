@@ -83,7 +83,7 @@ This project was built as a practical exercise while learning Linux and Bash scr
 
 ### Backup a File
 
-![Backup a File](YOUR_IMAGE_LINK_HERE)
+![Backup a File](https://github.com/henryofonedu/Linux-File-Manager/blob/main/screenshots/backup%20a%20file.jpg?raw=true)
 
 
 ## Author
