@@ -75,6 +75,13 @@ chmod +x linuxfilemanager.sh
 
 This project was built as a practical exercise while learning Linux and Bash scripting. The goal was to apply the concepts learned by building an interactive program capable of performing common file and directory management operations.
 
+## Screenshots
+
+### Main Menu
+
+![Main Menu](https://github.com/henryofonedu/Linux-File-Manager/blob/main/screenshots/main%20menu.jpg?raw=true)
+
+
 ## Author
 
 **Henry Ofonedu**
