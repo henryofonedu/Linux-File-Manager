@@ -81,6 +81,10 @@ This project was built as a practical exercise while learning Linux and Bash scr
 
 ![Main Menu](https://github.com/henryofonedu/Linux-File-Manager/blob/main/screenshots/main%20menu.jpg?raw=true)
 
+### Backup a File
+
+![Backup a File](YOUR_IMAGE_LINK_HERE)
+
 
 ## Author
 
