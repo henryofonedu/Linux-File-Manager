@@ -90,4 +90,4 @@ This project was built as a practical exercise while learning Linux and Bash scr
 
 **Henry Ofonedu**
 
-Computer Engineering student with interests in Linux, networking, cloud computing, cloud security, cybersecurity, Identity and Access Management (IAM), and automation.
+Computer Engineering student with interests in Linux, networking, cloud, cybersecurity, IAM, and automation.
