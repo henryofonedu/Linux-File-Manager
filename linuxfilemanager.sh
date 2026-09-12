@@ -405,7 +405,45 @@ do
             ;;
 
         9)
-        
+        echo "Enter the name of the file or path:"
+            read -r permission_file
+
+            if [ -f "$permission_file" ]; then
+                echo "Current permissions:"
+                ls -l "$permission_file"
+
+                echo ""
+                echo "Permission format: XYZ"
+                echo "First number  = Owner"
+                echo "Second number = Group"
+                echo "Third number  = Others"
+                echo ""
+                echo "r = 4"
+                echo "w = 2"
+                echo "x = 1"
+                echo ""
+                echo "Example: 644"
+                echo "6 = read and write"
+                echo "4 = read"
+                echo "4 = read"
+                echo ""
+
+                echo "Enter the new permission number:"
+                read -r permission_mode
+
+                chmod "$permission_mode" "$permission_file"
+                result=$?
+
+                if [ "$result" -eq 0 ]; then
+                    echo "File permissions changed successfully!"
+                    ls -l "$permission_file"
+                else
+                    echo "The file permissions could not be changed."
+                fi
+
+            else
+                echo "The file does not exist."
+            fi
         ;;
         
         10)
