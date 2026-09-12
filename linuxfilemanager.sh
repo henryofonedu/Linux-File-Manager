@@ -6,7 +6,7 @@
 
 choice=0
 
-until [ $choice -eq 9 ]
+until [ $choice -eq 10 ]
 do
     echo ""
     echo "LINUX FILE MANAGER"
@@ -20,10 +20,11 @@ do
         6. List files
         7. Search for a file or a word
         8. Backup a directory or a file
-        9. Exit
+        9. Change file permissions
+        10. Exit
       "
     sleep 1
-    echo "Enter your choice(1-9):"
+    echo "Enter your choice(1-10):"
     read -r choice
 
     case "$choice" in
@@ -404,6 +405,10 @@ do
             ;;
 
         9)
+        
+        ;;
+        
+        10)
             echo "Thank you for using Linux File Manager!"
             ;;
 
