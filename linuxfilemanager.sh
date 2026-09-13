@@ -28,6 +28,12 @@ do
         1)
             echo "Enter directory name or path:"
             read -r directory_name
+
+            if [ -z "$directory_name" ]; then
+            echo "Directory name cannot be empty."
+            continue
+            fi
+
             mkdir "$directory_name"
 
             result=$?
@@ -42,6 +48,11 @@ do
         2)
             echo "Enter file name or path:"
             read -r file_name
+
+            if [ -z "$file_name" ]; then
+                echo "File name cannot be empty."
+                continue
+            fi
 
             if [ -f "$file_name" ]; then
                 echo "A file with this name already exists"
@@ -61,9 +72,19 @@ do
             echo "Enter the current file name:"
             read -r current_filename
 
+            if [ -z "$current_filename" ]; then
+                echo "Current file name cannot be empty."
+                continue
+            fi
+
             if [ -f "$current_filename" ]; then
                 echo "Enter the new file name:"
                 read -r new_filename
+
+                if [ -z "$new_filename" ]; then
+                    echo "New file name cannot be empty."
+                    continue
+                fi
 
                 if [ -f "$new_filename" ]; then
                     echo "Warning! A file with this name already exists."
@@ -87,9 +108,19 @@ do
             echo "Enter the name of the file you want to delete:"
             read -r delete_file
 
+            if [ -z "$delete_file" ]; then
+              echo "File name cannot be empty."
+            continue
+            fi
+
             if [ -f "$delete_file" ]; then
                 echo "Are you sure you want to delete this file?(y/Y or n/N)"
                 read -r confirmation
+
+            if [ -z "$confirmation" ]; then
+              echo "Input cannot be empty."
+            continue
+            fi
 
                 case "$confirmation" in
 
@@ -123,6 +154,11 @@ do
             echo "Enter the directory name or path:"
             read -r delete_dir
 
+            if [ -z "$delete_dir" ]; then
+              echo "Directory name cannot be empty."
+            continue
+            fi
+
             if [ -d "$delete_dir" ]; then
                 file_count=$(ls -A "$delete_dir" | wc -l)
 
@@ -139,6 +175,11 @@ do
                 else
                     echo "Are you sure you want to delete the entire directory?(y/Y n/N)"
                     read -r confirmation
+
+                    if [ -z "$confirmation" ]; then
+                        echo "Input cannot be empty."
+                    continue
+                    fi 
 
                     case "$confirmation" in
 
@@ -173,12 +214,22 @@ do
             echo "Enter the name of the directory:"
             read -r list_dir
 
+            if [ -z "$list_dir" ]; then
+              echo "Directory name cannot be empty."
+            continue
+            fi
+
             if [ -d "$list_dir" ]; then
                 ls "$list_dir"
                 sleep 1
                 echo ""
                 echo "Do you want to see hidden files? (y/Y or n/N)"
                 read -r confirmation
+
+                if [ -z "$confirmation" ]; then
+                  echo "Input cannot be empty."
+                continue
+                fi
 
                 case "$confirmation" in
 
@@ -208,15 +259,30 @@ do
             echo "Enter your choice (1 or 2):"
             read -r search_choice
 
+            if [ -z "$search_choice" ]; then
+                  echo "Input cannot be empty."
+                continue
+                fi
+
             case "$search_choice" in
 
                 1)
                     echo "Enter the directory/path to search in:"
                     read -r search_path
 
+                    if [ -z "$search_path" ]; then
+                  echo "Search path cannot be empty."
+                continue
+                fi
+
                     if [ -d "$search_path" ]; then
                         echo "Enter the name of the file you want to search for:"
                         read -r search_file
+
+                        if [ -z "$search_file" ]; then
+                          echo "File name cannot be empty."
+                       continue
+                       fi
 
                         file_count=$(find "$search_path" -type f -name "$search_file" | wc -l)
 
@@ -235,9 +301,21 @@ do
                     echo "Enter the directory/path to search in:"
                     read -r search_path
 
+                if [ -z "$search_path" ]; then
+                  echo "Search path cannot be empty."
+                continue
+                fi
+
                     if [ -d "$search_path" ]; then
                         echo "Enter the word you want to search for :"
                         read -r search_word
+                    
+                if [ -z "$search_word" ]; then
+                  echo "Input cannot be empty."
+                continue
+                fi
+
+
 
                         word_count=$(grep -ro "$search_word" "$search_path" | wc -w)
 
@@ -273,9 +351,19 @@ do
                     echo "Enter the file name or path:"
                     read -r file_path
 
+                    if [ -z "$file_path" ]; then
+                        echo "File path cannot be empty."
+                        continue
+                    fi
+
                     if [ -f "$file_path" ]; then
                         echo "Enter the backup directory:"
                         read -r backup_dir
+
+                    if [ -z "$backup_dir" ]; then
+                        echo "Backup directory cannot be empty."
+                        continue
+                    fi 
 
                         if [ -d "$backup_dir" ]; then
                             cp "$file_path" "$backup_dir"
@@ -291,6 +379,11 @@ do
                             echo "The directory does not exist."
                             echo "Do you want to create it? (y/Y n/N)"
                             read -r create_dir
+
+                            if [ -z "$create_dir" ]; then
+                                echo "Input cannot be empty."
+                                continue
+                            fi
 
                             case "$create_dir" in
 
@@ -330,9 +423,19 @@ do
                     echo "Enter the directory name or path:"
                     read -r dir_path
 
+                    if [ -z "$dir_path" ]; then
+                        echo "Directory path cannot be empty."
+                        continue
+                    fi
+
                     if [ -d "$dir_path" ]; then
                         echo "Enter the backup directory:"
                         read -r backup_dir
+
+                    if [ -z "$backup_dir" ]; then
+                        echo "Backup directory be empty."
+                        continue
+                    fi
 
                         if [ -d "$backup_dir" ]; then
                             cp -r "$dir_path" "$backup_dir"
@@ -348,6 +451,11 @@ do
                             echo "The directory does not exist."
                             echo "Do you want to create it? (y/Y n/N)"
                             read -r create_dir
+
+                        if [ -z "$create_dir" ]; then
+                        echo "Input cannot be empty."
+                        continue
+                        fi
 
                             case "$create_dir" in
 
@@ -394,6 +502,11 @@ do
         echo "Enter the name of the file or path:"
         read -r permission_file
 
+        if [ -z "$permission_file" ]; then
+            echo "File name cannot be empty."
+        continue
+        fi
+
             if [ -f "$permission_file" ]; then
                 echo "Current permissions:"
                 ls -l "$permission_file"
@@ -417,7 +530,17 @@ do
                 echo "Enter the new permission number:"
                 read -r permission_mode
 
-                chmod $permission_mode "$permission_file"
+                     if [ -z "$permission_mode" ]; then
+                       echo "Permission number cannot be empty."
+                    continue
+                    fi
+
+                if [[ ! "$permission_mode" =~ ^[0-7]{3,4}$ ]]; then
+                   echo "Invalid permission format."
+                continue
+                fi
+
+                chmod "$permission_mode" "$permission_file"
                 result=$?
 
                 if [ "$result" -eq 0 ]; then
