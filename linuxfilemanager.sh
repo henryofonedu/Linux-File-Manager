@@ -433,8 +433,7 @@ do
 
                 chmod $permission_mode "$permission_file"
                 result=$?
-                echo "DEBUG: mode=$permission_mode file=$permission_file"
-
+                
                 if [ "$result" -eq 0 ]; then
                     echo "File permissions changed successfully!"
                     ls -l "$permission_file"
