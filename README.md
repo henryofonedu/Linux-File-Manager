@@ -18,6 +18,7 @@ The Linux File Manager can:
 * Backup files
 * Backup directories
 * Create a backup directory if it does not already exist
+* Change file permissions using permission numbers eg 755
 
 ## Technologies Used
 
@@ -36,13 +37,14 @@ This project applies several Linux commands and Bash scripting concepts, includi
 * `ls` – List files and directories
 * `find` – Search for files
 * `grep` – Search for words within files
-* `cp` – Backup files and directories
+* `cp` – Copy files and directories to a backup directory
 * `chmod` – Manage file permissions
 * `if` statements
 * `case` statements
 * Loops
 * User input using `read`
 * File and directory tests using `-f` and `-d`
+* Input validation using [[ ]] and regular expressions
 * Exit status checking using `$?`
 
 ## How to Run
@@ -85,6 +87,9 @@ This project was built as a practical exercise while learning Linux and Bash scr
 
 ![Backup a File](https://github.com/henryofonedu/Linux-File-Manager/blob/main/screenshots/backup%20a%20file.jpg?raw=true)
 
+### Change File Permissions
+
+![Change File Permissions](https://github.com/henryofonedu/Linux-File-Manager/blob/main/screenshots/permission.jpg?raw=true)
 
 ## Author
 
