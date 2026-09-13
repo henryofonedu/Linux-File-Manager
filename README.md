@@ -93,6 +93,10 @@ This project was built as a practical exercise while learning Linux and Bash scr
 
 ## Author
 
+<<<<<<< HEAD
 **Henry Ofonedu**
+=======
+### Henry Ofonedu
+>>>>>>> ee6e8e8d8be4fbe9b029528534461f2bb998c54f
 
 Computer Engineering student with interests in Linux, networking, cloud, cybersecurity, IAM, and automation.
