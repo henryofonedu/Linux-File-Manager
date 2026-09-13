@@ -1,8 +1,4 @@
- #project
-
 #!/bin/bash
-
-# this can only work when the program is executed, it wont protect when the user tries to modify the code wih nano or vim > chmod u=rwx,g=rwx,o=rwx "$0"
 
 choice=0
 
@@ -10,7 +6,7 @@ until [ $choice -eq 10 ]
 do
     echo ""
     echo "LINUX FILE MANAGER"
-    sleep 1
+    sleep 0.5
     echo "
         1. Create a directory
         2. Create a file
@@ -23,7 +19,7 @@ do
         9. Change file permissions
         10. Exit
       "
-    sleep 1
+    sleep 0.5 
     echo "Enter your choice(1-10):"
     read -r choice
 
@@ -180,7 +176,7 @@ do
             if [ -d "$list_dir" ]; then
                 ls "$list_dir"
                 sleep 1
-
+                echo ""
                 echo "Do you want to see hidden files? (y/Y or n/N)"
                 read -r confirmation
 
@@ -299,15 +295,11 @@ do
                             case "$create_dir" in
 
                                 n|N)
-                                    echo "Okay, returning to the main menu.."
-                                    sleep 0.5 
                                     echo "Okay, returning to the main menu..."
                                     sleep 0.5
                                     ;;
 
                                 y|Y)
-                                    echo "Creating $backup_dir."
-                                    sleep 0.5
                                     echo "Creating $backup_dir..."
                                     sleep 0.5
 
@@ -315,7 +307,6 @@ do
                                     result=$?
 
                                     if [ "$result" -eq 0 ]; then
-                                        sleep 2
                                         echo "The directory has been created and your file backup was successful."
                                     else
                                         echo "The directory could not be created or the file backup was not successful."
@@ -361,15 +352,11 @@ do
                             case "$create_dir" in
 
                                 n|N)
-                                    echo "Okay, returning to the main menu.."
-                                    sleep 0.5 
                                     echo "Okay, returning to the main menu..."
                                     sleep 0.5
                                     ;;
 
                                 y|Y)
-                                    echo "Creating $backup_dir."
-                                    sleep 0.5
                                     echo "Creating $backup_dir..."
                                     sleep 0.5
 
@@ -377,7 +364,6 @@ do
                                     result=$?
 
                                     if [ "$result" -eq 0 ]; then
-                                        sleep 2
                                         echo "The directory has been created and your directory backup was successful."
                                     else
                                         echo "The directory could not be created or the directory backup was not successful."
@@ -433,9 +419,10 @@ do
 
                 chmod $permission_mode "$permission_file"
                 result=$?
-                
+
                 if [ "$result" -eq 0 ]; then
                     echo "File permissions changed successfully!"
+                    echo "Permission has been changed to:" 
                     ls -l "$permission_file"
                 else
                     echo "The file permissions could not be changed."
