@@ -431,7 +431,7 @@ do
                 echo "Enter the new permission number:"
                 read -r permission_mode
 
-                chmod "$permission_mode" "$permission_file"
+                chmod $permission_mode "$permission_file"
                 result=$?
 
                 if [ "$result" -eq 0 ]; then
