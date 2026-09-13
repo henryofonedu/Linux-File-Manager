@@ -406,7 +406,7 @@ do
 
         9)
         echo "Enter the name of the file or path:"
-            read -r permission_file
+        read -r permission_file
 
             if [ -f "$permission_file" ]; then
                 echo "Current permissions:"
@@ -433,6 +433,7 @@ do
 
                 chmod $permission_mode "$permission_file"
                 result=$?
+                echo "DEBUG: mode=$permission_mode file=$permission_file"
 
                 if [ "$result" -eq 0 ]; then
                     echo "File permissions changed successfully!"
