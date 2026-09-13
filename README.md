@@ -94,4 +94,5 @@ This project was built as a practical exercise while learning Linux and Bash scr
 ## Author
 
 ### Henry Ofonedu
+
 Computer Engineering student with interests in Linux, networking, cloud, cybersecurity, IAM, and automation.
